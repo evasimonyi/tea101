@@ -1,7 +1,7 @@
-import App from './App';
-import homepage from './components/HomePage';
+import teas from './Teas';
+import homepage from './HomePage';
 
 export default [
   { path: '/', component: homepage },
-  { path: '/teas', component: App }
+  { path: '/teas', component: teas }
 ]

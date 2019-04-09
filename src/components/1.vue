@@ -28,5 +28,12 @@ export default { name: "whatistea" };
   font-size: 14px;
   font-weight: lighter;
 }
+p {
+  text-align: justify;
+  padding: 6px;
+  margin: 10px 10px 10px;
+  display: inline-block;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+}
 </style>
 

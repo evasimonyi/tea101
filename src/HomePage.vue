@@ -1,8 +1,8 @@
 <template>
-<div>
-  <p> Delicious Delights </p>
-  <button v-on:click="component='App'"> Check 'em out </button>
-</div>
+  <div>
+    <p> Delicious Delights </p>
+    <button v-on:click="component='teadetails'"> Check 'em out </button>
+  </div>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
   width: 100%;
   height: 100%;
