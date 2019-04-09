@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import teas from "./Teas";
-import homepage from "./HomePage";
+import teas from "./components/Teas";
+import homepage from "./components/HomePage";
 
 export default {
   components: {
@@ -21,4 +21,7 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: #e0e0e0;
+}
 </style>

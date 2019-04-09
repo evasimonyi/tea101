@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="home-container">
     <p> 
     Delicious <br>
-    Delights 
+    Delights <br>
     </p>
     <router-link to="/teas">
       <button> Check 'em out </button>
@@ -17,20 +17,11 @@ export default {
 </script>
 
 <style scoped>
-body {
-  width: 100%;
-  height: 100%;
-  background-color: grey;
-  text-align: center;
-  justify-content: center;
+.home-container {
   align-content: center;
+  text-align: center;
 }
 
-div {
-  align-content: center;
-  text-align: center;
-  justify-content: center;
-}
 p {
   text-align: center;
   justify-content: center;
@@ -43,6 +34,10 @@ p {
 button {
   background-color: #f4d942;
   font-size: 20px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 2px;
+  border: black solid 1px;
 }
 </style>
 

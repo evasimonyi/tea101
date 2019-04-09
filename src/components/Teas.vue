@@ -1,29 +1,32 @@
 <template>
-  <div id="teas">
-    <div class="buttoncontainer">
-      <button v-bind:key="tea.id" v-for="tea in teadetails" v-on:click="component=tea.paragraph"> 
-        {{tea.buttonText}}
-      </button>
-      <div class="imgcontainer"> 
-        <img src="./assets/tea.jpg">
-        <span class="imagetitle">This is a cup of tea</span>
+  <div>
+    <navbar />
+    <div id="teas">
+      <div class="buttoncontainer">
+        <button v-bind:key="tea.id" v-for="tea in teadetails" v-on:click="component=tea.paragraph"> 
+          {{tea.buttonText}}
+        </button>
+        <div class="imgcontainer"> 
+          <img src="../assets/tea.jpg">
+          <span class="imagetitle">This is a cup of tea</span>
+        </div>
+      </div>
+
+      <div class="tea-info-container">
+        <component v-bind:is="component"> </component>
       </div>
     </div>
-
-  <div class="tea-info-container">
-    <component v-bind:is="component"> </component>
-  </div>
-
   </div>
 </template>
 
 <script>
-import whatistea from "./components/1";
-import whitetea from "./components/2";
-import greentea from "./components/3";
-import puerhtea from "./components/4";
-import oolongtea from "./components/5";
-import blacktea from "./components/6";
+import whatistea from "./1";
+import whitetea from "./2";
+import greentea from "./3";
+import puerhtea from "./4";
+import oolongtea from "./5";
+import blacktea from "./6";
+import navbar from "./Navbar";
 
 export default {
   name: "teas",
@@ -33,7 +36,8 @@ export default {
     greentea,
     puerhtea,
     oolongtea,
-    blacktea
+    blacktea,
+    navbar
   },
   data() {
     return {
@@ -141,6 +145,14 @@ span {
 div p {
   text-align: justify;
   margin: 20px 30px 10px;
+  display: inline-block;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+}
+
+p {
+  text-align: justify;
+  padding: 6px;
+  margin: 10px 10px 10px;
   display: inline-block;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
 }
