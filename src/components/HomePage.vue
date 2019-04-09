@@ -1,7 +1,7 @@
 <template>
 <div>
   <p> Delicious Delights </p>
-  <button v-on:click="component='teadetails'"> Check 'em out </button>
+  <button v-on:click="component='App'"> Check 'em out </button>
 </div>
 </template>
 
