@@ -1,9 +1,7 @@
 <template>
 <div>
-  <p> 
-    Delicious Delights
-  </p>
-<input type='submit' value="Check 'em out"/>
+  <p> Delicious Delights </p>
+  <button v-on:click="component='teadetails'"> Check 'em out </button>
 </div>
 </template>
 
@@ -19,13 +17,18 @@ body {
   height: 100%;
   background-color: darkgrey;
 }
+
+div {
+  display: inline-block;
+}
+
 p {
   font-size: 40px;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
 }
 
-input {
+button {
   background-color: #f4d942;
   font-size: 20px;
 }
