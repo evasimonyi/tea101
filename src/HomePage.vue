@@ -1,7 +1,12 @@
 <template>
   <div>
-    <p> Delicious Delights </p>
-    <button v-on:click="component='teadetails'"> Check 'em out </button>
+    <p> 
+    Delicious <br>
+    Delights 
+    </p>
+    <router-link to="/teas">
+      <button> Check 'em out </button>
+    </router-link>
   </div>
 </template>
 
@@ -15,15 +20,22 @@ export default {
 body {
   width: 100%;
   height: 100%;
-  background-color: darkgrey;
+  background-color: grey;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
 }
 
 div {
-  display: inline-block;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
 }
-
 p {
-  font-size: 40px;
+  text-align: center;
+  justify-content: center;
+  display: block;
+  font-size: 60px;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
 }

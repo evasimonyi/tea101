@@ -26,7 +26,7 @@ import oolongtea from "./components/5";
 import blacktea from "./components/6";
 
 export default {
-  name: "app",
+  name: "teas",
   components: {
     whatistea,
     whitetea,
