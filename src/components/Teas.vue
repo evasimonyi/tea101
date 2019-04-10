@@ -110,6 +110,7 @@ button {
   font-weight: 700;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
   width: 250px;
+  outline: none;
 }
 button:focus {
   background-color: blue;
