@@ -6,7 +6,9 @@
       <input type="text" v-model="name" required />
       <label>OPINION</label>
       <textarea type="text" v-model="opinion" required></textarea>
+      <router-link to="/opinions">
       <input type="submit" value="SUBMIT" v-on:click="onSubmit"> 
+      </router-link>
     </form>
   </div>
 </template>
@@ -17,16 +19,24 @@ export default {
   data() {
     return {
       name: "",
-      opinion: ""
+      opinion: "",
+      storedinfo:
+        JSON.parse(localStorage.getItem("storedinfo")) == null
+          ? []
+          : JSON.parse(localStorage.getItem("storedinfo"))
     };
   },
   methods: {
-    onSubmit: function(e) {
-      let userName = this.name;
-      let userOpinion = this.opinion;
-      console.log(userName, userOpinion);
-      e.preventDefault();
-      this.name = this.opinion = "";
+    onSubmit: function() {
+      let newOpinion = {
+        name: this.name,
+        opinion: this.opinion
+      };
+      this.storedinfo.push(newOpinion);
+      let storedinfo = localStorage.setItem(
+        "storedinfo",
+        JSON.stringify(this.storedinfo)
+      );
     }
   }
 };
@@ -59,7 +69,8 @@ h2 {
   font-stretch: ultra-condensed;
 }
 
-input[type="submit"] {
+input[type="submit"],
+a {
   border-radius: 22px;
   padding: 16px;
   margin-top: 14px;

@@ -6,7 +6,6 @@
     <div class="form-container">
       <leaveform ></leaveform>
     </div>
-
   </div>
 </template>
 
