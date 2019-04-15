@@ -11,9 +11,8 @@
           <span class="imagetitle">This is a cup of tea</span>
         </div>
       </div>
-
       <div class="tea-info-container">
-        <component v-bind:is="component"> </component>
+        <p v-bind:key="renderedtea.name" v-for="renderedtea in component">{{renderedtea}}</p>
       </div>
 
     </div>
@@ -22,25 +21,16 @@
 
 <script>
 import whatistea from "./1";
-import whitetea from "./2";
-import greentea from "./3";
-import puerhtea from "./4";
-import oolongtea from "./5";
-import blacktea from "./6";
 import navbar from "./Navbar";
+import teas from "../teas";
+import Vue from "vue";
 
 export default {
   name: "teas",
   components: {
-    whatistea,
-    whitetea,
-    greentea,
-    puerhtea,
-    oolongtea,
-    blacktea,
-    navbar
+    navbar,
+    teas
   },
-  mounted() {},
   methods: {
     onClick: function(event) {
       return fetch("http://localhost:3000/teas")
@@ -49,12 +39,13 @@ export default {
           const clickedTea = data.find(
             oneTea => oneTea.name == event.target.name
           );
-          clickedTea.description.forEach(desc => (this.component = desc));
+          this.component = clickedTea.description;
         });
     }
   },
   data() {
     return {
+      teas: "",
       teadetails: [
         {
           id: 1,
@@ -87,7 +78,7 @@ export default {
           buttonText: "What is Black Tea?"
         }
       ],
-      component: "whatistea"
+      component: teas.teas[0].description
     };
   }
 };
