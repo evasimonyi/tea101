@@ -3,7 +3,7 @@
     <navbar />
     <div id="teas">
       <div class="buttoncontainer">
-        <button v-bind:key="tea.id" v-for="tea in teadetails" v-on:click="component=tea.paragraph"> 
+        <button :name="tea.paragraph" v-bind:key="tea.id" v-for="tea in teadetails" v-on:click="onClick"> 
           {{tea.buttonText}}
         </button>
         <div class="imgcontainer"> 
@@ -15,6 +15,7 @@
       <div class="tea-info-container">
         <component v-bind:is="component"> </component>
       </div>
+
     </div>
   </div>
 </template>
@@ -38,6 +39,19 @@ export default {
     oolongtea,
     blacktea,
     navbar
+  },
+  mounted() {},
+  methods: {
+    onClick: function(event) {
+      return fetch("http://localhost:3000/teas")
+        .then(res => res.json())
+        .then(data => {
+          const clickedTea = data.find(
+            oneTea => oneTea.name == event.target.name
+          );
+          clickedTea.description.forEach(desc => (this.component = desc));
+        });
+    }
   },
   data() {
     return {
